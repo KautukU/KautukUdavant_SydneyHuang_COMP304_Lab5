@@ -30,7 +30,7 @@
             android:value="@string/google_maps_key" />
 
         <activity android:name="com.example.KautukUdavant_SydneyHuang_COMP304_Lab5.MapsActivity" android:label="@string/title_activity_maps"/>
-        <activity android:name="com.example.KautukUdavant_SydneyHuang_COMP304_Lab5.LandmarksActivity" />
+        <activity android:name="com.example.KautukUdavant_SydneyHuang_COMP304_Lab5.RestaurantsActivity" />
         <activity android:name="com.example.KautukUdavant_SydneyHuang_COMP304_Lab5.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

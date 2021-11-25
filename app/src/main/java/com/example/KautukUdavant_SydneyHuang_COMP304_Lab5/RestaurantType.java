@@ -5,7 +5,7 @@ import android.view.View;
 
 import com.example.kautukudavant_sydneyhuang_comp304_lab5.R;
 
-public enum LandmarkType {
+public enum RestaurantType {
 
     Italian(R.color.colorOldBuildings),
     Greek(R.color.colorMuseums),
@@ -14,7 +14,7 @@ public enum LandmarkType {
 
     private final int color;
 
-    LandmarkType(int color) {
+    RestaurantType(int color) {
         this.color = color;
     }
 
@@ -22,12 +22,4 @@ public enum LandmarkType {
     public int getColorFrom(Context c) { return c.getResources().getInteger(color); }
     public int getColorFrom(View v) { return v.getResources().getInteger(color); }
 
-    public String format(boolean plural) {
-        String str = toString().replace('_', ' ');
-        return plural ? str + "S" : str;
-    }
-
-    public String format() {
-        return format(true);
-    }
 }

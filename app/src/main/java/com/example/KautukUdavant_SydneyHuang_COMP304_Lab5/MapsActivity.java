@@ -68,7 +68,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private static final int LOCATION_PERMISSION_REQUEST = 1;
     private static final int REQUEST_CHECK_SETTINGS = 2;
 
-    private Landmarks landmarks;
+    private Restaurants restaurants;
 
 
     @Override
@@ -94,7 +94,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
 
         Intent in = getIntent();
-        int id = in.getIntExtra(Landmarks.ID_EXTRA, -1);
+        int id = in.getIntExtra(Restaurants.ID_EXTRA, -1);
 
         if (id == -1) {
             Toast.makeText(this,
@@ -104,10 +104,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             return;
         }
 
-        landmarks = Landmarks.getLandmarkById(id);
+        restaurants = Restaurants.getLandmarkById(id);
 
-        if (landmarks != null) {
-            mapLocation = landmarks.getLatLng();
+        if (restaurants != null) {
+            mapLocation = restaurants.getLatLng();
         } else finish();
     }
 

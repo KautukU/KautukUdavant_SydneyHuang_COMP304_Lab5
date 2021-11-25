@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.KautukUdavant_SydneyHuang_COMP304_Lab5.LandmarksActivity">
+    tools:context="com.example.KautukUdavant_SydneyHuang_COMP304_Lab5.RestaurantsActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/landmarksRecyclerView"

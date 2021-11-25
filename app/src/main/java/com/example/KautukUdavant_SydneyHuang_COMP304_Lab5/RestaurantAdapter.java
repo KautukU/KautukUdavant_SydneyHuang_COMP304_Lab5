@@ -14,11 +14,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kautukudavant_sydneyhuang_comp304_lab5.R;
 
-public class LandmarkAdapter extends RecyclerView.Adapter<com.example.KautukUdavant_SydneyHuang_COMP304_Lab5.LandmarkAdapter.LandmarkHolder> {
+public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.LandmarkHolder> {
 
-    private final Landmarks[] landmarks;
+    private final Restaurants[] landmarks;
 
-    public LandmarkAdapter(@NonNull Landmarks[] data) {
+    public RestaurantAdapter(@NonNull Restaurants[] data) {
         landmarks = data;
     }
 
@@ -26,7 +26,7 @@ public class LandmarkAdapter extends RecyclerView.Adapter<com.example.KautukUdav
     @Override
     public LandmarkHolder onCreateViewHolder(@NonNull ViewGroup p, int type) {
         LayoutInflater in = LayoutInflater.from(p.getContext());
-        View view = in.inflate(R.layout.landmark_view, p, false);
+        View view = in.inflate(R.layout.restaurant_view, p, false);
         return new LandmarkHolder(view);
     }
 
@@ -45,7 +45,7 @@ public class LandmarkAdapter extends RecyclerView.Adapter<com.example.KautukUdav
             extends RecyclerView.ViewHolder
             implements View.OnClickListener {
 
-        private Landmarks landmarks;
+        private Restaurants restaurants;
 
         private final TextView nameTextView, typeTextView, addressTextView;
 
@@ -58,25 +58,25 @@ public class LandmarkAdapter extends RecyclerView.Adapter<com.example.KautukUdav
             view.setOnClickListener(this);
         }
 
-        public void setLandmarks(Landmarks landmarks) {
-            this.landmarks = landmarks;
-            nameTextView.setText(landmarks.getName());
-            addressTextView.setText(landmarks.getAddress());
+        public void setLandmarks(Restaurants restaurants) {
+            this.restaurants = restaurants;
+            nameTextView.setText(restaurants.getName());
+            addressTextView.setText(restaurants.getAddress());
 
-            LandmarkType type = landmarks.getType();
-            typeTextView.setText(String.format("%s", type.format(false)));
+            RestaurantType type = restaurants.getType();
+            typeTextView.setText(String.format("%s", type));
             typeTextView.setTextColor(type.getColorFrom(itemView));
         }
 
         @Override
         public void onClick(View v) {
             Toast.makeText(itemView.getContext(),
-                "Clicked " + landmarks.getName(),
+                "Clicked " + restaurants.getName(),
                 Toast.LENGTH_SHORT).show();
 
             Context ctx = v.getContext();
             Intent in = new Intent(ctx, MapsActivity.class);
-            in.putExtra(Landmarks.ID_EXTRA, landmarks.getLandmarkId());
+            in.putExtra(Restaurants.ID_EXTRA, restaurants.getLandmarkId());
             ctx.startActivity(in);
         }
     }

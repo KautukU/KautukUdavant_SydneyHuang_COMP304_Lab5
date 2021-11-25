@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private void initRecycler() {
         recyclerView = findViewById(R.id.landmarkTypesRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new LandmarkTypeAdapter());
+        recyclerView.setAdapter(new RestaurantTypeAdapter());
     }
 
 }

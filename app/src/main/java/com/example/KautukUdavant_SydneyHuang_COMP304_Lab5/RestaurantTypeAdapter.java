@@ -12,36 +12,36 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kautukudavant_sydneyhuang_comp304_lab5.R;
 
-public class LandmarkTypeAdapter
-        extends RecyclerView.Adapter<com.example.KautukUdavant_SydneyHuang_COMP304_Lab5.LandmarkTypeAdapter.LandmarkTypeHolder> {
+public class RestaurantTypeAdapter
+        extends RecyclerView.Adapter<RestaurantTypeAdapter.LandmarkTypeHolder> {
 
-    private final LandmarkType[] landmarkTypes;
+    private final RestaurantType[] restaurantTypes;
 
-    public LandmarkTypeAdapter() {
-        landmarkTypes = LandmarkType.values();
+    public RestaurantTypeAdapter() {
+        restaurantTypes = RestaurantType.values();
     }
 
     @NonNull
     @Override
     public LandmarkTypeHolder onCreateViewHolder(@NonNull ViewGroup p, int type) {
         LayoutInflater in = LayoutInflater.from(p.getContext());
-        View view = in.inflate(R.layout.landmark_type_view, p, false);
+        View view = in.inflate(R.layout.restaurant_type_view, p, false);
         return new LandmarkTypeHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull LandmarkTypeHolder holder, int i) {
-        holder.setType(landmarkTypes[i]);
+        holder.setType(restaurantTypes[i]);
     }
 
     @Override
-    public int getItemCount() { return landmarkTypes.length; }
+    public int getItemCount() { return restaurantTypes.length; }
 
     public static class LandmarkTypeHolder
             extends RecyclerView.ViewHolder
             implements View.OnClickListener {
 
-        private LandmarkType type;
+        private RestaurantType type;
         private final Button landmarkTypeButton;
 
         public LandmarkTypeHolder(@NonNull View view) {
@@ -50,17 +50,17 @@ public class LandmarkTypeAdapter
             landmarkTypeButton.setOnClickListener(this);
         }
 
-        public void setType(LandmarkType type) {
+        public void setType(RestaurantType type) {
             this.type = type;
-            landmarkTypeButton.setText(type.format());
+            landmarkTypeButton.setText(type.name());
             landmarkTypeButton.setBackgroundColor(type.getColorFrom(itemView));
         }
 
         @Override
         public void onClick(View v) {
             Context ctx = v.getContext();
-            Intent in = new Intent(ctx, com.example.KautukUdavant_SydneyHuang_COMP304_Lab5.LandmarksActivity.class);
-            in.putExtra(Landmarks.TYPE_EXTRA, type.toString());
+            Intent in = new Intent(ctx, RestaurantsActivity.class);
+            in.putExtra(Restaurants.TYPE_EXTRA, type.toString());
             ctx.startActivity(in);
         }
     }
