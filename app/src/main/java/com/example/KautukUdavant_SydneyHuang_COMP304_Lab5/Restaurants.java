@@ -11,21 +11,21 @@ public class Restaurants {
     private static int idCount = 0;
 
     private final static Restaurants[] RESTAURANTS = {
-            new Restaurants(RestaurantType.Indian, "CN Tower", "290 Bremner Blvd, Toronto, ON M5V 3L9", 43.642597, -79.387121),
-            new Restaurants(RestaurantType.Indian, "Ripley's Aquarium of Canada", "288 Bremner Blvd, Toronto, ON M5V 3L9", 43.642477, -79.3859608),
-            new Restaurants(RestaurantType.Indian, "Toronto Zoo", "2000 Meadowvale Rd, Toronto, ON M1B 5K7", 43.820801, -79.181464),
+            new Restaurants(RestaurantType.Indian, "Babu Takeout and Catering", "4800 Sheppard Ave E, Toronto, ON M1S 4N5", 43.791500, -79.251590),
+            new Restaurants(RestaurantType.Indian, "The Roti Hut", "351 Pitfield Rd, Scarborough, ON M1S 3E5", 43.787050, -79.258320),
+            new Restaurants(RestaurantType.Indian, "The Nilgiris Restaurant", "3021 Markham Rd #50, Scarborough, ON M1X 1L8", 43.829220, -79.248756),
 
-            new Restaurants(RestaurantType.Chinese, "Varsity Centre", "299 Bloor St W, Toronto, ON M5S 1W2", 43.667074, -79.397268),
-            new Restaurants(RestaurantType.Chinese, "Rogers Centre", "1 Blue Jays Way, Toronto, ON M5V 1J1", 43.641896, -79.389090),
-            new Restaurants(RestaurantType.Chinese, "BMO Field", "170 Princes' Blvd, Toronto, ON M6K 3C3", 43.635511, -79.417750),
+            new Restaurants(RestaurantType.Chinese, "Congee Queen", "3850 Sheppard Ave E, Scarborough, ON M1T 3L4", 43.787601, -79.268387),
+            new Restaurants(RestaurantType.Chinese, "Yin Ji Chang Fen", "7010 Warden Ave. #17-18, Markham, ON L3R 5Y3", 43.820160, -79.325060),
+            new Restaurants(RestaurantType.Chinese, "Wok and Grill", "1085 O'Connor Dr, Toronto, ON M4B 3N1", 43.71355, -79.308232),
 
-            new Restaurants(RestaurantType.Greek, "Royal Ontario Museum", "100 Queens Park, Toronto, ON M5S 2C6", 43.667984, -79.394604),
-            new Restaurants(RestaurantType.Greek, "Museum of Contemporary Art", "158 Sterling Rd, Toronto, ON M6R2B7", 43.654684, -79.445215),
-            new Restaurants(RestaurantType.Greek, "Art Gallery of Ontario", "322 Dundas St W, Toronto, ON M5T 1G5", 43.654526, -79.392194),
+            new Restaurants(RestaurantType.Greek, "Mr.Greek", "855 Milner Ave, Scarborough, ON M1B 5N6", 43.8113, -79.193),
+            new Restaurants(RestaurantType.Greek, "Johnny's Shawarma", "1904 Kennedy Rd, Scarborough, ON M1P 2L8", 43.7688, -79.281913),
+            new Restaurants(RestaurantType.Greek, "Shawarma Elsabil", "2680 Lawrence Ave E Unit 103, Scarborough, ON M1P 4Y4", 43.716987, -79.254681),
 
-            new Restaurants(RestaurantType.Italian, "Fort York", "250 Fort York Blvd, Toronto, ON M5V 3K9", 43.637905, -79.406474),
-            new Restaurants(RestaurantType.Italian, "George Brown House", "186 Beverley St, Toronto, ON M5T 1L4", 43.656951, -79.395714),
-            new Restaurants(RestaurantType.Italian, "Casa loma", "1 Austin Terrace, Toronto, ON M5R 1X8", 43.678254, -79.409422),
+            new Restaurants(RestaurantType.Italian, "East Side Marios", "1355 Kingston Rd, Pickering, ON L1V 1B8", 43.837035, -79.088675),
+            new Restaurants(RestaurantType.Italian, "Fratelli Village Pizzeria", "384 Old Kingston Rd, Scarborough, ON M1C 1B6", 43.716987, -79.254681),
+            new Restaurants(RestaurantType.Italian, "Remezzo Italian Bistro\n", "3335 Sheppard Ave E, Scarborough, ON M1T 3K2", 43.784153, -79.292884),
     };
 
 
