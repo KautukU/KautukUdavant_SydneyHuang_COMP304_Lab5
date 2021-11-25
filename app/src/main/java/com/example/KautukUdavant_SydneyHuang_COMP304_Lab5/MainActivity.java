@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initRecycler() {
-        recyclerView = findViewById(R.id.landmarkTypesRecyclerView);
+        recyclerView = findViewById(R.id.restaurantTypesRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new RestaurantTypeAdapter());
     }

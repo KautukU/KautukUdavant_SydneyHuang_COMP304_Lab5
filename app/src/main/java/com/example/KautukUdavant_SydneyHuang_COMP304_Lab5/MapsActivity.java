@@ -104,7 +104,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             return;
         }
 
-        restaurants = Restaurants.getLandmarkById(id);
+        restaurants = Restaurants.getRestaurantById(id);
 
         if (restaurants != null) {
             mapLocation = restaurants.getLatLng();

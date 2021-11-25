@@ -33,10 +33,10 @@ public class RestaurantsActivity extends AppCompatActivity {
     }
 
     private void initRecycler() {
-        recyclerView = findViewById(R.id.landmarksRecyclerView);
+        recyclerView = findViewById(R.id.restaurantRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         RestaurantAdapter adapter = new RestaurantAdapter(
-                Restaurants.getLandmarksByType(restaurantType, true));
+                Restaurants.getRestaurantByType(restaurantType, true));
         recyclerView.setAdapter(adapter);
     }
 }

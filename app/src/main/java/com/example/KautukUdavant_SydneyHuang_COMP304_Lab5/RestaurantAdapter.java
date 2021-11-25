@@ -14,34 +14,34 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kautukudavant_sydneyhuang_comp304_lab5.R;
 
-public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.LandmarkHolder> {
+public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.RestaurantHolder> {
 
-    private final Restaurants[] landmarks;
+    private final Restaurants[] restaurant;
 
     public RestaurantAdapter(@NonNull Restaurants[] data) {
-        landmarks = data;
+        restaurant = data;
     }
 
     @NonNull
     @Override
-    public LandmarkHolder onCreateViewHolder(@NonNull ViewGroup p, int type) {
+    public RestaurantHolder onCreateViewHolder(@NonNull ViewGroup p, int type) {
         LayoutInflater in = LayoutInflater.from(p.getContext());
         View view = in.inflate(R.layout.restaurant_view, p, false);
-        return new LandmarkHolder(view);
+        return new RestaurantHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull LandmarkHolder holder, int i) {
-        Log.d("onBindViewHolder", landmarks[i].getName());
-        holder.setLandmarks(landmarks[i]);
+    public void onBindViewHolder(@NonNull RestaurantHolder holder, int i) {
+        Log.d("onBindViewHolder", restaurant[i].getName());
+        holder.setRestaurant(restaurant[i]);
     }
 
     @Override
     public int getItemCount() {
-        return landmarks.length;
+        return restaurant.length;
     }
 
-    public static class LandmarkHolder
+    public static class RestaurantHolder
             extends RecyclerView.ViewHolder
             implements View.OnClickListener {
 
@@ -49,16 +49,16 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.La
 
         private final TextView nameTextView, typeTextView, addressTextView;
 
-        public LandmarkHolder(@NonNull View view) {
+        public RestaurantHolder(@NonNull View view) {
             super(view);
-            nameTextView = view.findViewById(R.id.landmarkNameTextView);
-            typeTextView = view.findViewById(R.id.landmarkTypeTextView);
-            addressTextView = view.findViewById(R.id.landmarkAddressTextView);
+            nameTextView = view.findViewById(R.id.restaurantNameTextView);
+            typeTextView = view.findViewById(R.id.restaurantTypeTextView);
+            addressTextView = view.findViewById(R.id.restaurantAddressTextView);
 
             view.setOnClickListener(this);
         }
 
-        public void setLandmarks(Restaurants restaurants) {
+        public void setRestaurant(Restaurants restaurants) {
             this.restaurants = restaurants;
             nameTextView.setText(restaurants.getName());
             addressTextView.setText(restaurants.getAddress());
@@ -76,7 +76,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.La
 
             Context ctx = v.getContext();
             Intent in = new Intent(ctx, MapsActivity.class);
-            in.putExtra(Restaurants.ID_EXTRA, restaurants.getLandmarkId());
+            in.putExtra(Restaurants.ID_EXTRA, restaurants.getRestaurantId());
             ctx.startActivity(in);
         }
     }

@@ -10,9 +10,9 @@
 
 
 
-    <color name="colorOldBuildings">#000000</color>
-    <color name="colorMuseums">#000000</color>
-    <color name="colorStadiums">#000000</color>
-    <color name="colorAttractions">#000000</color>
+    <color name="colorIndian">#000000</color>
+    <color name="colorChinese">#000000</color>
+    <color name="colorGreek">#000000</color>
+    <color name="colorItalian">#000000</color>
 
 </resources>

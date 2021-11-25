@@ -6,11 +6,11 @@ import com.google.android.gms.maps.model.LatLng;
 
 public class Restaurants {
     public final static String
-            TYPE_EXTRA = "landmark_type",
-            ID_EXTRA = "landmark_id";
+            TYPE_EXTRA = "restaurant_type",
+            ID_EXTRA = "restaurant_id";
     private static int idCount = 0;
 
-    private final static Restaurants[] LANDMARKS = {
+    private final static Restaurants[] RESTAURANTS = {
             new Restaurants(RestaurantType.Indian, "CN Tower", "290 Bremner Blvd, Toronto, ON M5V 3L9", 43.642597, -79.387121),
             new Restaurants(RestaurantType.Indian, "Ripley's Aquarium of Canada", "288 Bremner Blvd, Toronto, ON M5V 3L9", 43.642477, -79.3859608),
             new Restaurants(RestaurantType.Indian, "Toronto Zoo", "2000 Meadowvale Rd, Toronto, ON M1B 5K7", 43.820801, -79.181464),
@@ -29,7 +29,7 @@ public class Restaurants {
     };
 
 
-    private int landmarkId;
+    private int restaurantId;
 
     private RestaurantType type;
 
@@ -41,9 +41,9 @@ public class Restaurants {
 
     public Restaurants() {}
 
-    public Restaurants(int landmarkId, RestaurantType type,
+    public Restaurants(int restaurantId, RestaurantType type,
                        String name, String address, double lat, double lng) {
-        this.landmarkId = landmarkId;
+        this.restaurantId = restaurantId;
         this.type = type;
         this.name = name;
         this.latitude = lat;
@@ -55,8 +55,8 @@ public class Restaurants {
         this(idCount++, type, name, address, lat, lng);
     }
 
-    public int getLandmarkId() { return landmarkId; }
-    public void setLandmarkId(int landmarkId) { this.landmarkId = landmarkId; }
+    public int getRestaurantId() { return restaurantId; }
+    public void setRestaurantId(int restaurantId) { this.restaurantId = restaurantId; }
 
     public RestaurantType getType() { return type; }
     public void setType(RestaurantType type) { this.type = type; }
@@ -76,12 +76,12 @@ public class Restaurants {
     public LatLng getLatLng() { return new LatLng(latitude, longitude); }
 
 
-    public static Restaurants[] getLandmarksByType(RestaurantType type, boolean b) {
+    public static Restaurants[] getRestaurantByType(RestaurantType type, boolean b) {
         Restaurants[] ofType = new Restaurants[3];
         int x = 0;
-        for (Restaurants restaurants : Restaurants.LANDMARKS) {
+        for (Restaurants restaurants : Restaurants.RESTAURANTS) {
             if (restaurants.type == type) {
-                Log.d("getLandmarksByType", "found: " + restaurants.name);
+                Log.d("getRestaurantByType", "found: " + restaurants.name);
                 ofType[x++] = restaurants;
                 if (x == 3) break;
             }
@@ -95,9 +95,9 @@ public class Restaurants {
         return type.getColor();
     }
 
-    public static Restaurants getLandmarkById(int id) {
-        for (Restaurants lm : LANDMARKS) {
-            if (lm.getLandmarkId() == id) {
+    public static Restaurants getRestaurantById(int id) {
+        for (Restaurants lm : RESTAURANTS) {
+            if (lm.getRestaurantId() == id) {
                 return lm;
             }
         }

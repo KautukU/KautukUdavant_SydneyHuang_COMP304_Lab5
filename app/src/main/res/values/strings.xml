@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">KautukUdavant_SydneyHuang_COMP304_Lab5</string>
     <string name="title_activity_maps">Map</string>
-    <string name="old_buildings">Old Buildings</string>
-    <string name="museums">Museums</string>
-    <string name="stadiums">Stadiums</string>
-    <string name="attractions">Attractions</string>
+    <string name="indian">Indian</string>
+    <string name="chinese">Chinese</string>
+    <string name="greek">Greek</string>
+    <string name="italian">Italian</string>
 </resources>

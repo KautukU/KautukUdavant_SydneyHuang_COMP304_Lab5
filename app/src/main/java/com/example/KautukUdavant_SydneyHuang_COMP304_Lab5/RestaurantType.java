@@ -7,10 +7,10 @@ import com.example.kautukudavant_sydneyhuang_comp304_lab5.R;
 
 public enum RestaurantType {
 
-    Italian(R.color.colorOldBuildings),
-    Greek(R.color.colorMuseums),
-    Chinese(R.color.colorStadiums),
-    Indian(R.color.colorAttractions);
+    Italian(R.color.colorIndian),
+    Greek(R.color.colorChinese),
+    Chinese(R.color.colorGreek),
+    Indian(R.color.colorItalian);
 
     private final int color;
 

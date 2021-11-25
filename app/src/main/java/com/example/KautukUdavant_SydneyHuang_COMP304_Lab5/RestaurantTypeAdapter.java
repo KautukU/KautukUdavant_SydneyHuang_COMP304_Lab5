@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.kautukudavant_sydneyhuang_comp304_lab5.R;
 
 public class RestaurantTypeAdapter
-        extends RecyclerView.Adapter<RestaurantTypeAdapter.LandmarkTypeHolder> {
+        extends RecyclerView.Adapter<RestaurantTypeAdapter.RestaurantTypeHolder> {
 
     private final RestaurantType[] restaurantTypes;
 
@@ -23,37 +23,37 @@ public class RestaurantTypeAdapter
 
     @NonNull
     @Override
-    public LandmarkTypeHolder onCreateViewHolder(@NonNull ViewGroup p, int type) {
+    public RestaurantTypeHolder onCreateViewHolder(@NonNull ViewGroup p, int type) {
         LayoutInflater in = LayoutInflater.from(p.getContext());
         View view = in.inflate(R.layout.restaurant_type_view, p, false);
-        return new LandmarkTypeHolder(view);
+        return new RestaurantTypeHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull LandmarkTypeHolder holder, int i) {
+    public void onBindViewHolder(@NonNull RestaurantTypeHolder holder, int i) {
         holder.setType(restaurantTypes[i]);
     }
 
     @Override
     public int getItemCount() { return restaurantTypes.length; }
 
-    public static class LandmarkTypeHolder
+    public static class RestaurantTypeHolder
             extends RecyclerView.ViewHolder
             implements View.OnClickListener {
 
         private RestaurantType type;
-        private final Button landmarkTypeButton;
+        private final Button restaurantTypeButton;
 
-        public LandmarkTypeHolder(@NonNull View view) {
+        public RestaurantTypeHolder(@NonNull View view) {
             super(view);
-            landmarkTypeButton = view.findViewById(R.id.landmarkTypeButton);
-            landmarkTypeButton.setOnClickListener(this);
+            restaurantTypeButton = view.findViewById(R.id.restaurantTypeButton);
+            restaurantTypeButton.setOnClickListener(this);
         }
 
         public void setType(RestaurantType type) {
             this.type = type;
-            landmarkTypeButton.setText(type.name());
-            landmarkTypeButton.setBackgroundColor(type.getColorFrom(itemView));
+            restaurantTypeButton.setText(type.name());
+            restaurantTypeButton.setBackgroundColor(type.getColorFrom(itemView));
         }
 
         @Override
